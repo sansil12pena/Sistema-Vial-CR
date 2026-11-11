@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Sistema Vial CR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <!-- Menu lateral -->
+    <aside class="menu">
+
+        <h2>Sistema Vial CR</h2>
+        <p>Gestion de transito</p>
+
+        <nav>
+            <a href="index.html" class="activo">Inicio</a>
+            <a href="incidentes.html">Incidentes</a>
+            <a href="calles.html">Estado de calles</a>
+            <a href="rutas.html">Rutas alternativas</a>
+            <a href="reportes.html">Reportes viales</a>
+            <a href="alertas.html">Alertas viales</a>
+        </nav>
+
+        <div class="menu-pie">
+            <a href="login.html">Iniciar sesion</a>
+        </div>
+
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="contenido">
+
+        <!-- Bienvenida -->
+        <section class="bienvenida">
+
+            <h2>Bienvenido a Sistema Vial CR</h2>
+
+            <p>
+                Consulta incidentes, estados de calles,
+                rutas alternativas y alertas viales.
+            </p>
+
+        </section>
+
+        <!-- Tarjetas de resumen -->
+        <section class="resumen" aria-label="Resumen vial">
+
+            <div class="tarjetas">
+
+                <div class="tarjeta">
+                    <h3>Incidentes activos</h3>
+                    <p class="numero" id="nIncidentes">0</p>
+                    <span id="subIncidentes">De 0 registrados</span>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Carreteras afectadas</h3>
+                    <p class="numero" id="nCalles">0</p>
+                    <span id="subCalles">De 0 monitoreadas</span>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Rutas alternativas</h3>
+                    <p class="numero" id="nRutas">0</p>
+                    <span>Opciones registradas</span>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Alertas de prioridad alta</h3>
+                    <p class="numero" id="nAlertas">0</p>
+                    <span id="subAlertas">De 0 alertas</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Incidentes por tipo -->
+        <section class="panel">
+
+            <h2>Incidentes por tipo</h2>
+
+            <p class="nota">
+                Cantidad de incidentes registrados
+                segun su clasificacion.
+            </p>
+
+            <div id="graficoTipos" class="grupo-graficos"></div>
+
+        </section>
+
+        <!-- Incidentes por provincia -->
+        <section class="panel">
+
+            <h2>Incidentes por provincia</h2>
+
+            <p class="nota">
+                Distribucion de incidentes
+                registrados por provincia.
+            </p>
+
+            <div id="resumenProvincias" class="grupo-graficos"></div>
+
+        </section>
+
+        <!-- Incidentes recientes -->
+        <section class="panel">
+
+            <div class="titulo-panel">
+
+                <h2>Incidentes recientes</h2>
+
+                <a href="incidentes.html" class="enlace">
+                    Ver todos
+                </a>
+
+            </div>
+
+            <div class="tabla-contenedor">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Carretera</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Estado</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="recientes"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- Alertas por prioridad -->
+        <section class="panel">
+
+            <h2>Alertas por prioridad</h2>
+
+            <p class="nota">
+                Resumen de las alertas registradas
+                segun su nivel de prioridad.
+            </p>
+
+            <div id="resumenAlertas" class="grupo-graficos"></div>
+
+        </section>
+
+        <footer>
+            <p>Sistema Vial CR </p>
+           
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- Archivos JavaScript -->
+<script src="js/datos.js"></script>
+<script src="js/inicio.js"></script>
+
+</body>
+</html>

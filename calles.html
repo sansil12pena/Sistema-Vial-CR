@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estado de calles - Sistema Vial CR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <aside class="menu">
+
+        <h2>Sistema Vial CR</h2>
+        <p>Gestion de transito</p>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="incidentes.html">Incidentes</a>
+            <a href="calles.html" class="activo">Estado de calles</a>
+            <a href="rutas.html">Rutas alternativas</a>
+            <a href="reportes.html">Reportes viales</a>
+            <a href="alertas.html">Alertas viales</a>
+        </nav>
+
+        <div class="menu-pie">
+            <a href="login.html">Iniciar sesion</a>
+        </div>
+
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="contenido">
+
+        <!-- Bienvenida -->
+        <section class="bienvenida">
+
+            <h2>Estado de carreteras</h2>
+
+            <p>
+                Busca y filtra el estado de las vias incluidas
+                en la demostracion.
+            </p>
+
+        </section>
+
+        <!-- Panel de consulta -->
+        <section class="panel">
+
+            <h2>Consulta de calles</h2>
+
+            <!-- Filtros -->
+            <div class="filtros">
+
+                <!-- Buscar carretera -->
+                <div class="grupo-filtro">
+
+                    <label for="buscar">
+                        Buscar carretera
+                    </label>
+
+                    <input
+                        type="text"
+                        id="buscar"
+                        placeholder="Ejemplo: Ruta 27">
+
+                </div>
+
+                <!-- Filtrar por estado -->
+                <div class="grupo-filtro">
+
+                    <label for="filtroEstado">
+                        Filtrar por estado
+                    </label>
+
+                    <select id="filtroEstado">
+
+                        <option value="Todos">
+                            Todos los estados
+                        </option>
+
+                        <option value="Disponible">
+                            Disponible
+                        </option>
+
+                        <option value="Congestionada">
+                            Congestionada
+                        </option>
+
+                        <option value="Cerrada">
+                            Cerrada
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- Cantidad de resultados -->
+            <p
+                id="cantidadResultados"
+                class="nota"
+                aria-live="polite">
+            </p>
+
+            <!-- Tabla de carreteras -->
+            <div class="tabla-contenedor">
+
+                <table id="tablaCalles">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Carretera</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Ultima actualizacion</th>
+                        </tr>
+                    </thead>
+
+                    <!-- Las carreteras se agregan desde calles.js -->
+                    <tbody id="cuerpoCalles"></tbody>
+
+                </table>
+
+            </div>
+
+            <!-- Mensaje sin resultados -->
+            <p
+                id="sinResultados"
+                class="mensaje-vacio"
+                hidden>
+                No se encontraron carreteras.
+            </p>
+
+            <p class="nota">
+                Estados y fechas ficticios.
+                No representan informacion en tiempo real.
+            </p>
+
+        </section>
+
+        <!-- Pie de pagina -->
+        <footer>
+            <p>Sistema Vial CR </p>
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- JavaScript compartido -->
+<script src="js/datos.js"></script>
+
+<!-- JavaScript de estado de calles -->
+<script src="js/calles.js"></script>
+
+</body>
+</html>

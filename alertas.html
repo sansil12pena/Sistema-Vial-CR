@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alertas viales - Sistema Vial CR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <!-- Menu lateral -->
+    <aside class="menu">
+
+        <h2>Sistema Vial CR</h2>
+        <p>Gestion de transito</p>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="incidentes.html">Incidentes</a>
+            <a href="calles.html">Estado de calles</a>
+            <a href="rutas.html">Rutas alternativas</a>
+            <a href="reportes.html">Reportes viales</a>
+            <a href="alertas.html" class="activo">Alertas viales</a>
+        </nav>
+
+        <div class="menu-pie">
+            <a href="login.html">Iniciar sesion</a>
+        </div>
+
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="contenido">
+
+        <section class="bienvenida">
+
+            <h2>Avisos viales</h2>
+
+            <p>
+                Consulta alertas de demostracion
+                clasificadas por prioridad.
+            </p>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>Alertas registradas</h2>
+
+            <!-- Filtros -->
+            <div class="filtros">
+
+                <div class="grupo-filtro">
+
+                    <label for="buscarCarretera">
+                        Buscar carretera
+                    </label>
+
+                    <input
+                        type="text"
+                        id="buscarCarretera"
+                        placeholder="Ejemplo: Ruta 27">
+
+                </div>
+
+                <div class="grupo-filtro">
+
+                    <label for="prioridad">
+                        Filtrar por prioridad
+                    </label>
+
+                    <select id="prioridad">
+                        <option value="Todas">Todas</option>
+                        <option value="Alta">Alta</option>
+                        <option value="Media">Media</option>
+                        <option value="Baja">Baja</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- Cantidad de resultados -->
+            <p
+                id="cantidadAlertas"
+                class="nota"
+                aria-live="polite">
+            </p>
+
+            <!-- Alertas generadas con JavaScript -->
+            <div id="listaAlertas"></div>
+
+            <!-- Mensaje cuando no hay resultados -->
+            <p
+                id="sinAlertas"
+                class="mensaje-vacio"
+                hidden>
+                No hay alertas con los filtros seleccionados.
+            </p>
+
+            <p class="nota">
+                Estas alertas son ficticias y no representan
+                avisos oficiales ni informacion en tiempo real.
+            </p>
+
+        </section>
+
+        <footer>
+            <p>Sistema Vial CR </p>
+            
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- Archivos JavaScript -->
+<script src="js/datos.js"></script>
+<script src="js/alertas.js"></script>
+
+</body>
+</html>

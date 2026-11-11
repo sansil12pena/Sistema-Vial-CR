@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutas alternativas - Sistema Vial CR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <aside class="menu">
+
+        <h2>Sistema Vial CR</h2>
+        <p>Gestion de transito</p>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="incidentes.html">Incidentes</a>
+            <a href="calles.html">Estado de calles</a>
+            <a href="rutas.html" class="activo">Rutas alternativas</a>
+            <a href="reportes.html">Reportes viales</a>
+            <a href="alertas.html">Alertas viales</a>
+        </nav>
+
+        <div class="menu-pie">
+            <a href="login.html">Iniciar sesion</a>
+        </div>
+
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="contenido">
+
+        <section class="bienvenida">
+
+            <h2>Consulta de rutas</h2>
+
+            <p>
+                Consulta las rutas alternativas registradas
+                para carreteras con incidentes.
+            </p>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>Consultar rutas alternativas</h2>
+
+            <!-- Filtro de carreteras -->
+            <div class="filtros">
+
+                <div class="grupo-filtro">
+
+                    <label for="filtroRuta">
+                        Carretera principal
+                    </label>
+
+                    <select id="filtroRuta">
+                        <option value="Todas">Todas las carreteras</option>
+                        <option value="Ruta 1">Ruta 1</option>
+                        <option value="Ruta 2">Ruta 2</option>
+                        <option value="Ruta 27">Ruta 27</option>
+                        <option value="Ruta 32">Ruta 32</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- Cantidad de resultados -->
+            <p
+                id="cantidadRutas"
+                class="nota"
+                aria-live="polite">
+            </p>
+
+            <!-- Tabla de rutas -->
+            <div class="tabla-contenedor">
+
+                <table id="tablaRutas">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Ruta principal</th>
+                            <th scope="col">Problema</th>
+                            <th scope="col">Ruta alternativa</th>
+                        </tr>
+                    </thead>
+
+                    <!-- JavaScript agrega las rutas -->
+                    <tbody id="cuerpoRutas"></tbody>
+
+                </table>
+
+            </div>
+
+            <!-- Mensaje sin resultados -->
+            <p
+                id="sinRutas"
+                class="mensaje-vacio"
+                hidden>
+                No hay rutas alternativas registradas
+                para esta carretera.
+            </p>
+
+            <p class="nota">
+                Rutas de ejemplo. No utilizar para navegacion real.
+            </p>
+
+        </section>
+
+        <footer>
+            <p>Sistema Vial CR </p>
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- Ventana de informacion -->
+<dialog
+    id="ventanaRuta"
+    class="ventana-detalle"
+    aria-labelledby="tituloVentanaRuta">
+
+    <div class="titulo-panel">
+
+        <h2 id="tituloVentanaRuta">
+            Informacion de la ruta
+        </h2>
+
+        <button
+            type="button"
+            id="cerrarRuta"
+            class="boton secundario">
+            Cerrar
+        </button>
+
+    </div>
+
+    <!-- JavaScript agrega los detalles -->
+    <div id="contenidoRuta"></div>
+
+    <p class="nota">
+        Rutas de ejemplo. No utilizar para navegacion real.
+    </p>
+
+</dialog>
+
+<!-- Archivos JavaScript -->
+<script src="js/datos.js"></script>
+<script src="js/rutas.js"></script>
+
+</body>
+</html>

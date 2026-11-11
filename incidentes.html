@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Incidentes - Sistema Vial CR</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Estilos de Leaflet -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <aside class="menu">
+
+        <h2>Sistema Vial CR</h2>
+        <p>Gestion de transito</p>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="incidentes.html" class="activo">Incidentes</a>
+            <a href="calles.html">Estado de calles</a>
+            <a href="rutas.html">Rutas alternativas</a>
+            <a href="reportes.html">Reportes viales</a>
+            <a href="alertas.html">Alertas viales</a>
+        </nav>
+
+        <div class="menu-pie">
+            <a href="login.html">Iniciar sesion</a>
+        </div>
+
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="contenido">
+
+        <section class="bienvenida">
+
+            <h2>Consulta de incidentes</h2>
+
+            <p>
+                Consulta los incidentes registrados y revisa
+                su ubicacion y detalles.
+            </p>
+
+        </section>
+
+        <!-- Panel de incidentes -->
+        <section class="panel">
+
+            <div class="titulo-panel">
+                <h2>Lista de incidentes</h2>
+                <span>Registros de ejemplo</span>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filtros">
+
+                <div class="grupo-filtro">
+
+                    <label for="buscar">Buscar incidente</label>
+
+                    <input
+                        type="text"
+                        id="buscar"
+                        placeholder="Carretera, tipo o ubicacion">
+
+                </div>
+
+                <div class="grupo-filtro">
+
+                    <label for="filtroEstado">Estado</label>
+
+                    <select id="filtroEstado">
+                        <option value="Todos">Todos</option>
+                        <option value="Activo">Activo</option>
+                        <option value="Resuelto">Resuelto</option>
+                    </select>
+
+                </div>
+
+                <div class="grupo-filtro">
+
+                    <label for="filtroFecha">Fecha</label>
+
+                    <input type="date" id="filtroFecha">
+
+                </div>
+
+            </div>
+
+            <!-- Limpiar filtros -->
+            <button
+                type="button"
+                id="limpiarFiltros"
+                class="boton secundario">
+                Limpiar filtros
+            </button>
+
+            <!-- Cantidad de resultados -->
+            <p
+                id="cantidadResultados"
+                class="nota"
+                aria-live="polite">
+            </p>
+
+            <!-- Tabla de incidentes -->
+            <div class="tabla-contenedor">
+
+                <table id="tablaIncidentes">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Carretera</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Provincia</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Detalle</th>
+                        </tr>
+                    </thead>
+
+                    <!-- JavaScript agrega las filas -->
+                    <tbody id="cuerpoIncidentes"></tbody>
+
+                </table>
+
+            </div>
+
+            <!-- Sin resultados -->
+            <p
+                id="sinResultados"
+                class="mensaje-vacio"
+                hidden>
+                No se encontraron incidentes.
+            </p>
+
+            <p class="nota">
+                Todos los incidentes y ubicaciones son ficticios.
+                No representan informacion vial en tiempo real.
+            </p>
+
+        </section>
+
+        <!-- Panel del mapa de incidentes -->
+        <section class="panel">
+
+            <h2>Mapa de incidentes</h2>
+
+            <p>
+                Consulta la ubicacion de los incidentes
+                registrados en Sistema Vial CR.
+            </p>
+
+            <!-- Contenedor del mapa -->
+            <div id="mapaIncidentes"></div>
+
+            <p class="nota">
+                Las ubicaciones mostradas son datos de ejemplo.
+                No representan informacion en tiempo real.
+            </p>
+
+        </section>
+
+        <!-- Pie de pagina -->
+        <footer>
+            <p>Sistema Vial CR </p>
+        
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- Ventana de detalles -->
+<dialog
+    id="ventanaDetalle"
+    class="ventana-detalle"
+    aria-labelledby="tituloDetalle">
+
+    <div class="titulo-panel">
+
+        <h2 id="tituloDetalle">
+            Detalle del incidente
+        </h2>
+
+        <button
+            type="button"
+            id="cerrarDetalle"
+            class="boton secundario">
+            Cerrar
+        </button>
+
+    </div>
+
+    <!-- JavaScript agrega los detalles -->
+    <div id="contenidoDetalle"></div>
+
+    <p class="nota">
+        Informacionpara demostracion.
+    </p>
+
+</dialog>
+
+<!-- Biblioteca Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Datos compartidos -->
+<script src="js/datos.js"></script>
+
+<!-- Funciones de incidentes -->
+<script src="js/incidentes.js"></script>
+
+<!-- Mapa de incidentes -->
+<script src="js/mapa-incidentes.js"></script>
+
+</body>
+</html>

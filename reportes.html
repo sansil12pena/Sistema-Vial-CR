@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes viales - Sistema Vial CR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <aside class="menu">
+
+            <h2>Sistema Vial CR</h2>
+            <p>Gestion de transito</p>
+
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="incidentes.html">Incidentes</a>
+                <a href="calles.html">Estado de calles</a>
+                <a href="rutas.html">Rutas alternativas</a>
+                <a href="reportes.html" class="activo">Reportes viales</a>
+                <a href="alertas.html">Alertas viales</a>
+            </nav>
+
+            <div class="menu-pie">
+                <a href="login.html">Iniciar sesion</a>
+            </div>
+
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="contenido">
+
+            <section class="bienvenida">
+
+                <h2>Registrar un reporte vial</h2>
+
+                <p>
+                    Completa la informacion del incidente.
+                    Por ahora solo se validaran los datos.
+                </p>
+
+            </section>
+
+            <section class="panel">
+
+                <!-- Los reportes no se guardan ni se envian.
+                El almacenamiento se implementara
+                posteriormente con PHP y MySQL. -->
+
+                <h2>Formulario de reporte</h2>
+
+                <form id="formReporte">
+
+                    <!-- Tipo de incidente -->
+                    <div class="grupo-formulario">
+
+                        <label for="tipo">
+                            Tipo de incidente
+                        </label>
+
+                        <select id="tipo" name="tipo" required>
+                            <option value="">Seleccione una opcion</option>
+                            <option value="Accidente">Accidente</option>
+                            <option value="Congestionamiento">Congestionamiento</option>
+                            <option value="Cierre">Cierre</option>
+                            <option value="Obstaculo">Obstaculo</option>
+                        </select>
+
+                    </div>
+
+                    <!-- Provincia -->
+                    <div class="grupo-formulario">
+
+                        <label for="provincia">
+                            Provincia
+                        </label>
+
+                        <select id="provincia" name="provincia" required>
+                            <option value="">Seleccione una provincia</option>
+                            <option value="San Jose">San Jose</option>
+                            <option value="Alajuela">Alajuela</option>
+                            <option value="Cartago">Cartago</option>
+                            <option value="Heredia">Heredia</option>
+                            <option value="Guanacaste">Guanacaste</option>
+                            <option value="Puntarenas">Puntarenas</option>
+                            <option value="Limon">Limon</option>
+                        </select>
+
+                    </div>
+
+                    <!-- Canton -->
+                    <div class="grupo-formulario">
+
+                        <label for="canton">
+                            Canton
+                        </label>
+
+                        <select id="canton" name="canton" required disabled>
+                            <option value="">
+                                Primero seleccione una provincia
+                            </option>
+                        </select>
+
+                    </div>
+
+                    <!-- Carretera -->
+                    <div class="grupo-formulario">
+
+                        <label for="calle">
+                            Carretera
+                        </label>
+
+                        <select id="calle" name="calle" required disabled>
+                            <option value="">
+                                Primero seleccione un canton
+                            </option>
+                        </select>
+
+                        <p class="nota">
+                            Se muestran rutas de ejemplo asociadas
+                            a la provincia seleccionada.
+                            Tambien puede indicar otra carretera
+                            o calle local.
+                        </p>
+
+                    </div>
+
+                    <!-- Otra carretera o calle local -->
+                    <div class="grupo-formulario" id="grupoOtraCalle" hidden>
+
+                        <label for="otraCalle">
+                            Nombre de la carretera o calle local
+                        </label>
+
+                        <input type="text" id="otraCalle" name="otraCalle" maxlength="150"
+                            placeholder="Ejemplo: Calle principal de San Rafael">
+
+                        <p class="nota">
+                            Escriba el nombre de la carretera
+                            o una referencia para identificarla.
+                        </p>
+
+                    </div>
+
+                    <!-- Punto de referencia -->
+                    <div class="grupo-formulario">
+
+                        <label for="referencia">
+                            Punto de referencia
+                        </label>
+
+                        <input type="text" id="referencia" name="referencia" maxlength="150"
+                            placeholder="Ejemplo: cerca de una interseccion" required>
+
+                    </div>
+
+                    <!-- Fecha -->
+                    <div class="grupo-formulario">
+
+                        <label for="fecha">
+                            Fecha del incidente
+                        </label>
+
+                        <input type="date" id="fecha" name="fecha" required>
+
+                    </div>
+
+                    <!-- Descripcion -->
+                    <div class="grupo-formulario">
+
+                        <label for="descripcion">
+                            Descripcion del incidente
+                        </label>
+
+                        <textarea id="descripcion" name="descripcion" rows="5" maxlength="500" required
+                            placeholder="Describe lo sucedido (minimo 10 caracteres)"></textarea>
+
+                        <div class="ayuda-descripcion">
+
+                            <span id="estadoDescripcion">
+                                Minimo 10 caracteres
+                            </span>
+
+                            <span id="contadorCaracteres">
+                                0 / 500 caracteres
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="acciones">
+
+                        <button type="submit" class="boton">
+                            Validar reporte
+                        </button>
+
+                        <button type="button" id="limpiarFormulario" class="boton secundario">
+                            Limpiar formulario
+                        </button>
+
+                    </div>
+
+                    <!-- Mensaje de validacion -->
+                    <p id="mensajeReporte" role="status" aria-live="polite">
+                    </p>
+
+                </form>
+
+            </section>
+
+            <footer>
+                <p>Sistema Vial CR </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript del formulario -->
+    <script src="js/reportes.js"></script>
+
+</body>
+
+</html>

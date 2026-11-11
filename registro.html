@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Sistema Vial CR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="auth">
+
+    <section class="panel">
+
+        <h1>Crear cuenta</h1>
+
+        <p class="nota">
+            Registro de demostracion de Sistema Vial CR.
+        </p>
+
+        <!-- Formulario de registro -->
+        <form id="formRegistro">
+
+            <!-- Nombre completo -->
+            <div class="grupo-formulario">
+
+                <label for="nombre">Nombre completo</label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    maxlength="100"
+                    autocomplete="name"
+                    placeholder="Ingrese su nombre completo"
+                    required>
+
+            </div>
+
+           <!-- Correo electronico -->
+            <div class="grupo-formulario">
+
+                <label for="correo">Correo electronico</label>
+
+                <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    autocomplete="email"
+                    placeholder="ejemplo@correo.com"
+                    required>
+
+            </div>
+
+            <!--  Contrasena -->
+            <div class="grupo-formulario">
+
+                <label for="contrasena">Contrasena</label>
+
+                <input
+                    type="password"
+                    id="contrasena"
+                    name="contrasena"
+                    minlength="8"
+                    autocomplete="new-password"
+                    placeholder="Minimo 8 caracteres"
+                    required>
+
+                <p class="nota">
+                    La contrasena debe contener al menos 8 caracteres.
+                </p>
+
+            </div>
+
+            <!--  Confirmar contrasena -->
+            <div class="grupo-formulario">
+
+                <label for="confirmarContrasena">
+                    Confirmar contrasena
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmarContrasena"
+                    name="confirmarContrasena"
+                    minlength="8"
+                    autocomplete="new-password"
+                    placeholder="Repita su contrasena"
+                    required>
+
+            </div>
+
+            <!-- Botones -->
+            <div class="acciones">
+
+                <button type="submit" class="boton">
+                    Validar registro
+                </button>
+
+                <a href="login.html" class="boton secundario">
+                    Volver al login
+                </a>
+
+            </div>
+
+            <!-- Mensaje de validacion -->
+            <p
+                id="mensajeRegistro"
+                role="status"
+                aria-live="polite">
+            </p>
+
+        </form>
+
+        <p class="nota">
+            Este formulario no crea cuentas reales.
+            El registro se implementara en el backend.
+        </p>
+
+    </section>
+
+</main>
+
+ <!-- JavaScript del registro -->
+<script src="js/registro.js"></script>
+
+</body>
+</html>
