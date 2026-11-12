@@ -10,7 +10,6 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Estilos de Leaflet -->
     <link
         rel="stylesheet"
         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -41,7 +40,6 @@
 
     </aside>
 
-    <!-- Contenido principal -->
     <main class="contenido">
 
         <section class="bienvenida">
@@ -54,16 +52,12 @@
             </p>
 
         </section>
-
-        <!-- Panel de incidentes -->
         <section class="panel">
 
             <div class="titulo-panel">
                 <h2>Lista de incidentes</h2>
                 <span>Registros de ejemplo</span>
             </div>
-
-            <!-- Filtros -->
             <div class="filtros">
 
                 <div class="grupo-filtro">
@@ -98,23 +92,18 @@
                 </div>
 
             </div>
-
-            <!-- Limpiar filtros -->
             <button
                 type="button"
                 id="limpiarFiltros"
                 class="boton secundario">
                 Limpiar filtros
             </button>
-
-            <!-- Cantidad de resultados -->
             <p
                 id="cantidadResultados"
                 class="nota"
                 aria-live="polite">
             </p>
 
-            <!-- Tabla de incidentes -->
             <div class="tabla-contenedor">
 
                 <table id="tablaIncidentes">
@@ -131,14 +120,11 @@
                         </tr>
                     </thead>
 
-                    <!-- JavaScript agrega las filas -->
                     <tbody id="cuerpoIncidentes"></tbody>
 
                 </table>
 
             </div>
-
-            <!-- Sin resultados -->
             <p
                 id="sinResultados"
                 class="mensaje-vacio"
@@ -152,8 +138,6 @@
             </p>
 
         </section>
-
-        <!-- Panel del mapa de incidentes -->
         <section class="panel">
 
             <h2>Mapa de incidentes</h2>
@@ -163,7 +147,6 @@
                 registrados en Sistema Vial CR.
             </p>
 
-            <!-- Contenedor del mapa -->
             <div id="mapaIncidentes"></div>
 
             <p class="nota">
@@ -173,7 +156,7 @@
 
         </section>
 
-        <!-- Pie de pagina -->
+        
         <footer>
             <p>Sistema Vial CR </p>
         
@@ -183,7 +166,6 @@
 
 </div>
 
-<!-- Ventana de detalles -->
 <dialog
     id="ventanaDetalle"
     class="ventana-detalle"
@@ -204,7 +186,6 @@
 
     </div>
 
-    <!-- JavaScript agrega los detalles -->
     <div id="contenidoDetalle"></div>
 
     <p class="nota">
