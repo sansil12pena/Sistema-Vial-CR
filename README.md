@@ -24,4 +24,8 @@ Sistema web para consultar informacion sobre incidentes viales en Costa Rica.
 
 ## Estado del proyecto
 
+
 Actualmente se utiliza informacion de ejemplo para demostrar las funcionalidades del frontend, cuando se integre PhP y MySQL, el proyecto abordara mejor el sistema.
+
+Actualmente se utiliza informacion de ejemplo para demostrar las funcionalidades del frontend, cuando se integre PhP y MySQL, el proyecto abordara mejor el sistema.
+
