@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -31,8 +32,6 @@
             </div>
 
         </aside>
-
-        <!-- Contenido principal -->
         <main class="contenido">
 
             <section class="bienvenida">
@@ -46,11 +45,33 @@
 
             </section>
 
+            <!-- Seguimiento de reportes -->
+            <section class="panel">
+
+                <h2>Seguimiento de reportes</h2>
+
+                <p>
+                    Consulta el estado de un reporte vial
+                    mediante su codigo de seguimiento.
+                </p>
+
+                <p class="nota">
+                    Por ahora, el seguimiento funciona
+                    con reportes de ejemplo.
+                </p>
+
+                <a href="seguimiento.html" class="boton">
+                    Consultar seguimiento
+                </a>
+
+            </section>
+
+            <!-- Formulario de reportes -->
             <section class="panel">
 
                 <!-- Los reportes no se guardan ni se envian.
-                El almacenamiento se implementara
-                posteriormente con PHP y MySQL. -->
+                     El almacenamiento se implementara
+                     posteriormente con PHP y MySQL. -->
 
                 <h2>Formulario de reporte</h2>
 
@@ -137,8 +158,13 @@
                             Nombre de la carretera o calle local
                         </label>
 
-                        <input type="text" id="otraCalle" name="otraCalle" maxlength="150"
-                            placeholder="Ejemplo: Calle principal de San Rafael">
+                        <input
+                            type="text"
+                            id="otraCalle"
+                            name="otraCalle"
+                            maxlength="150"
+                            placeholder="Ejemplo: Calle principal de San Rafael"
+                        >
 
                         <p class="nota">
                             Escriba el nombre de la carretera
@@ -154,31 +180,46 @@
                             Punto de referencia
                         </label>
 
-                        <input type="text" id="referencia" name="referencia" maxlength="150"
-                            placeholder="Ejemplo: cerca de una interseccion" required>
+                        <input
+                            type="text"
+                            id="referencia"
+                            name="referencia"
+                            maxlength="150"
+                            placeholder="Ejemplo: cerca de una interseccion"
+                            required
+                        >
 
                     </div>
 
-                    <!-- Fecha -->
                     <div class="grupo-formulario">
 
                         <label for="fecha">
                             Fecha del incidente
                         </label>
 
-                        <input type="date" id="fecha" name="fecha" required>
+                        <input
+                            type="date"
+                            id="fecha"
+                            name="fecha"
+                            required
+                        >
 
                     </div>
 
-                    <!-- Descripcion -->
                     <div class="grupo-formulario">
 
                         <label for="descripcion">
                             Descripcion del incidente
                         </label>
 
-                        <textarea id="descripcion" name="descripcion" rows="5" maxlength="500" required
-                            placeholder="Describe lo sucedido (minimo 10 caracteres)"></textarea>
+                        <textarea
+                            id="descripcion"
+                            name="descripcion"
+                            rows="5"
+                            maxlength="500"
+                            required
+                            placeholder="Describe lo sucedido (minimo 10 caracteres)"
+                        ></textarea>
 
                         <div class="ayuda-descripcion">
 
@@ -194,30 +235,35 @@
 
                     </div>
 
-                    <!-- Botones -->
                     <div class="acciones">
 
                         <button type="submit" class="boton">
                             Validar reporte
                         </button>
 
-                        <button type="button" id="limpiarFormulario" class="boton secundario">
+                        <button
+                            type="button"
+                            id="limpiarFormulario"
+                            class="boton secundario"
+                        >
                             Limpiar formulario
                         </button>
 
                     </div>
 
                     <!-- Mensaje de validacion -->
-                    <p id="mensajeReporte" role="status" aria-live="polite">
-                    </p>
+                    <p
+                        id="mensajeReporte"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
 
                 </form>
 
             </section>
 
             <footer>
-                <p>Sistema Vial CR </p>
-
+                <p>Sistema Vial CR</p>
             </footer>
 
         </main>

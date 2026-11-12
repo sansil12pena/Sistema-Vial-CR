@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de reportes - Sistema Vial CR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="contenedor">
+
+    <aside class="menu">
+        <h2>Sistema Vial CR</h2>
+        <p>Gestion de transito</p>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="incidentes.html">Incidentes</a>
+            <a href="calles.html">Estado de calles</a>
+            <a href="rutas.html">Rutas alternativas</a>
+            <a href="reportes.html" class="activo">Reportes viales</a>
+            <a href="alertas.html">Alertas viales</a>
+        </nav>
+
+        <div class="menu-pie">
+            <a href="login.html">Iniciar sesion</a>
+        </div>
+    </aside>
+
+    <main class="contenido">
+    <!--  Seguimiento de demostracion con datos ficticios.
+                Los reportes enviados desde el formulario
+                todavia no se almacenan. --> 
+        <section class="bienvenida">
+            <h2>Seguimiento de reportes</h2>
+            <p>
+                Consulta el estado de los reportes viales
+                registrados en el sistema.
+            </p>
+        </section>
+
+        <section class="panel">
+            <h2>Consultar reporte</h2>
+
+            <p class="nota">
+                Ingresa el codigo del reporte para consultar
+                su informacion y estado actual.
+            </p>
+
+            <form id="formSeguimiento">
+
+                <div class="grupo-formulario">
+                    <label for="codigoReporte">
+                        Codigo del reporte
+                    </label>
+
+                    <input
+                        type="text"
+                        id="codigoReporte"
+                        placeholder="Ejemplo: REP-0001"
+                        maxlength="20"
+                        required
+                    >
+                </div>
+
+                <div class="acciones">
+                    <button type="submit" class="boton">
+                        Consultar reporte
+                    </button>
+
+                    <a href="reportes.html" class="boton secundario">
+                        Volver a reportes
+                    </a>
+                </div>
+
+            </form>
+
+            <p id="mensajeSeguimiento" class="mensaje" hidden></p>
+        </section>
+
+        <section class="panel" id="resultadoSeguimiento" hidden>
+
+            <h2>Informacion del reporte</h2>
+
+            <div id="detalleSeguimiento"></div>
+
+        </section>
+
+        <section class="panel">
+            <h2>Estados de seguimiento</h2>
+
+            <p>
+                <span class="estado congestionada">Pendiente</span>
+                El reporte esta esperando revision.
+            </p>
+
+            <p>
+                <span class="estado disponible">En revision</span>
+                El reporte esta siendo verificado.
+            </p>
+
+            <p>
+                <span class="estado resuelto">Atendido</span>
+                El reporte fue revisado y se registro una decision.
+            </p>
+
+            <p>
+                <span class="estado cerrada">Rechazado</span>
+                El reporte no fue aceptado.
+            </p>
+        </section>
+
+        <footer>
+            <p>Sistema Vial CR </p>
+            
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="js/datos.js"></script>
+<script src="js/seguimiento.js"></script>
+
+</body>
+</html>
